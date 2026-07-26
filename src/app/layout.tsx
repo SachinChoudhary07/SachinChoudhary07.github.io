@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono, Outfit, Syne } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { AppProviders } from "@/components/providers/app-providers";
@@ -136,7 +135,6 @@ export default function RootLayout({
           <BackToTop />
           <CommandPalette />
         </AppProviders>
-        <Analytics />
       </body>
     </html>
   );

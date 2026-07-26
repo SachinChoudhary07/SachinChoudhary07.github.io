@@ -1,5 +1,7 @@
 import { SITE } from "@/constants/site";
 
+export const dynamic = "force-static";
+
 export default function manifest() {
   return {
     name: `${SITE.name} — Portfolio`,
