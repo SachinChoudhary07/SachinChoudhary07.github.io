@@ -19,7 +19,9 @@ export const SITE = {
   email: "sachin.dev2910@gmail.com",
   phone: "+91 6232580029",
   location: "Indore, MP, India",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sachinchoudhary.dev",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    "https://sachinchoudhary07.github.io",
   photo: "/assets/images/sachin-choudhary.png",
   ogImage: "/assets/images/portfolio-hero.png",
 } as const;
