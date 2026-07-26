@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Reveal, SectionHeading } from "@/components/shared/section-heading";
-import { ABOUT, EDUCATION, SITE } from "@/constants/site";
+import { ABOUT, SITE } from "@/constants/site";
 
 const ABOUT_BLOCKS: { key: keyof typeof ABOUT; title: string }[] = [
   { key: "intro", title: "Who I Am" },
@@ -68,26 +68,6 @@ export function About() {
                     {block.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-subtext">{ABOUT[block.key]}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-10">
-          <Reveal>
-            <h3 className="font-display mb-8 text-center text-2xl font-bold text-foreground sm:text-3xl">
-              Education
-            </h3>
-          </Reveal>
-          <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-2">
-            {EDUCATION.map((item, i) => (
-              <Reveal key={item.title} delay={i * 0.08}>
-                <div className="glass h-full rounded-2xl border border-white/10 p-6">
-                  <h4 className="font-display text-base font-semibold text-foreground">
-                    {item.title}
-                  </h4>
-                  <p className="mt-2 text-sm text-subtext">{item.school}</p>
                 </div>
               </Reveal>
             ))}

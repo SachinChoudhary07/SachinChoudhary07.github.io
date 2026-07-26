@@ -14,7 +14,7 @@ export function Experience() {
         <SectionHeading
           eyebrow="Experience"
           title="Where I've Made an Impact"
-          description="A track record of shipping production Flutter apps across fintech, health, and logistics."
+          description="A track record of shipping production Flutter apps across fitness, healthcare, edtech, dating, and logistics."
         />
 
         <div className="relative">

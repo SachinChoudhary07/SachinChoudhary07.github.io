@@ -35,7 +35,7 @@ export function Services() {
         <SectionHeading
           eyebrow="Services"
           title="How I Can Help"
-          description="From first commit to store release — end-to-end Flutter expertise for your product."
+          description="From first commit to store release — Flutter and web expertise for your product."
         />
 
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">

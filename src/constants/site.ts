@@ -21,7 +21,7 @@ export const SITE = {
   location: "Indore, MP, India",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sachinchoudhary.dev",
   photo: "/assets/images/sachin-choudhary.png",
-  ogImage: "/assets/images/sachin-choudhary.png",
+  ogImage: "/assets/images/portfolio-hero.png",
 } as const;
 
 export const NAV_ITEMS: NavItem[] = [
@@ -56,17 +56,17 @@ export const MEDIUM_PROFILE = "https://medium.com/@sachin.dev2910";
 
 export const HERO_ROLES = [
   "Flutter Developer",
-  "Mobile App Developer",
-  "Full Stack Web Developer",
-  "Firebase Specialist",
   "Contributing Writer",
+  "Full Stack Web Developer",
+  "Mobile App Developer",
+  "Firebase Specialist",
 ] as const;
 
 export const HERO_TAGS = [
   "Flutter Developer",
   "Mobile App Developer",
+  "Full Stack Web Developer",
   "Cross Platform Expert",
-  "Clean Code Enthusiast",
 ] as const;
 
 export const HERO_STATS: Stat[] = [
@@ -79,7 +79,7 @@ export const HERO_STATS: Stat[] = [
 export const ACHIEVEMENT_STATS: Stat[] = [
   { value: 4, suffix: "+", label: "Years Experience" },
   { value: 10, suffix: "+", label: "Projects" },
-  { value: 10, suffix: "+", label: "Stores Published" },
+  { value: 5, suffix: "+", label: "Store Releases" },
   { value: 60, suffix: "%", label: "Fewer Crashes" },
 ];
 
@@ -93,19 +93,8 @@ export const ABOUT = {
   passion:
     "I'm passionate about smooth UX, stable releases, and realtime features that keep users engaged — chat, voice, and video experiences that feel reliable in production.",
   currentFocus:
-    "Currently at Codiant (A Yash Technology Company), building fitness and clinical apps including Calcount, CalCounts Pro, Fitterloop, ScribeFlo, and CoachRater.",
+    "Currently at Codiant (A Yash Technology Company), building fitness and clinical apps including CalCounts, CalCounts Pro, Scribeflo, and CoachRater.",
 };
-
-export const EDUCATION = [
-  {
-    title: "Bachelor of Computer Application",
-    school: "Krishna Computer Institute, Indore",
-  },
-  {
-    title: "Higher Secondary",
-    school: "Sunshine Higher Secondary School",
-  },
-] as const;
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
@@ -202,8 +191,8 @@ export const EXPERIENCES: Experience[] = [
     technologies: ["Flutter", "Dart", "Provider", "Bloc", "REST APIs", "Firebase"],
     achievements: [
       "Delivered CalCounts Pro instructor dashboard for tablet coaches",
-      "Built Calcount meal tracking with barcode scan, photo upload, and subscriptions",
-      "Shipped ScribeFlo clinical documentation with realtime transcription",
+      "Built CalCounts meal tracking with barcode scan, photo upload, and subscriptions",
+      "Shipped Scribeflo clinical documentation with realtime transcription",
       "Published and maintained apps on both major stores",
     ],
   },
@@ -374,7 +363,7 @@ export const PROJECTS: Project[] = [
     description:
       "Private, encrypted & offline document vault with AES-256 security, biometric unlock, and local-only storage.",
     longDescription:
-      "Your Privacy, Our Priority. Tired of trusting sensitive documents to the cloud? Docvian provides a military-grade, offline-first sanctuary for your most important IDs, files, and records. Designed for those who demand total control over their data, Docvian ensures that your information never leaves your device. It uses industry-standard AES-256 encryption—the same standard used by banks and governments—with keys stored securely in your device's hardware-backed storage. No servers, no clouds, no tracking. Your vault is truly your own: we cannot see your data, reset your password, or track your activity.",
+      "Docvian is an offline-first document vault I worked on for storing IDs, files, and personal records locally on-device. It uses AES-256 encryption with hardware-backed key storage, biometric unlock, and no cloud sync by design — so sensitive documents never leave the user's phone. I focused on vault UX, secure session handling, scanner/import flows, and organized categories/tags for fast retrieval.",
     image: "/assets/images/docvian.png",
     screenshots: ["/assets/images/docvian.png"],
     features: [
@@ -416,10 +405,10 @@ export const PROJECTS: Project[] = [
     role: "Flutter Developer — secure vault UX, encryption flows, scanner, and document organization.",
     performance: [
       "Instant biometric unlock for vault access",
-      "Lightning-fast retrieval with searchable tags and filters",
+      "Fast retrieval with searchable tags and filters",
       "Zero network dependency for day-to-day document management",
     ],
-    timeline: "Personal / Product",
+    timeline: "Product",
   },
   {
     id: "calcount",
@@ -514,22 +503,22 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "mio-amore",
-    title: "Mio Amore: Dating App Platform",
+    title: "Mio Amore: Dating App",
     description:
-      "Full-featured Flutter dating platform with Firebase, matching, encrypted chat, admin panel, and monetization.",
+      "Flutter dating app with Firebase auth, matching, encrypted chat, admin tools, and subscription monetization.",
     longDescription:
-      "Mio Amore gives you all the controls you want for your dating app. Embark on launching a sophisticated dating experience akin to Tinder or Bumble — with an attractive UI to captivate users, an algorithmic match system to boost engagement, and seamless monetization through premium subscriptions. Built on a single Flutter codebase for Android and iOS with a scalable Firebase backend, photo ID verification, end-to-end encrypted messaging, RevenueCat subscriptions, and AdMob support. Seize your opportunity in the multi-billion dollar dating industry with a continuously evolving feature set.",
+      "Mio Amore is a Flutter dating app I worked on with matching, discovery, and chat at the core. I implemented key consumer flows on Android and iOS from a single codebase, wired Firebase auth and profile data, and supported safety-focused features like photo ID verification plus encrypted messaging. The product also includes admin controls for user management, plus monetization through RevenueCat subscriptions and AdMob. A public demo build is available on the Play Store.",
     image: "/assets/images/mio-amore.png",
     screenshots: ["/assets/images/mio-amore.png"],
     features: [
       "Native Android & iOS from a single Flutter codebase",
-      "Scalable Firebase backend with multi-auth (Google, Facebook, Phone)",
+      "Firebase backend with multi-auth (Google, Facebook, Phone)",
       "Admin panel for user management, settings, and blocking",
-      "Photo ID verification for enhanced user safety",
-      "End-to-end encrypted messaging for privacy",
+      "Photo ID verification for safer matching",
+      "End-to-end encrypted messaging",
       "Subscriptions via RevenueCat and ads via AdMob",
-      "Account settings for location, radius, and discovery",
-      "First-time app guides and slick engagement-focused design",
+      "Location, radius, and discovery settings",
+      "Onboarding guides and engagement-focused UI",
     ],
     techStack: [
       "Flutter",
@@ -542,28 +531,28 @@ export const PROJECTS: Project[] = [
     categories: ["Flutter", "Firebase", "UI", "API"],
     playStore: "https://play.google.com/store/apps/details?id=com.incevio.mioamore&hl=en_IN",
     challenges: [
-      "Building a dating platform that balances engagement, safety, and privacy",
-      "Supporting both consumer apps and an admin panel from Flutter + Firebase",
-      "Monetization without hurting the core matching experience",
+      "Balancing engagement features with safety and privacy",
+      "Supporting consumer app flows and admin tooling on Flutter + Firebase",
+      "Adding monetization without hurting the matching experience",
     ],
     solutions: [
-      "Firebase-backed architecture with multi-auth and admin controls",
-      "Photo ID verification and end-to-end encrypted messaging",
+      "Firebase-backed auth, profiles, and admin controls",
+      "Photo ID verification and encrypted messaging",
       "RevenueCat subscriptions and AdMob for flexible monetization",
     ],
     lessons: [
       "Dating products win when safety and privacy are first-class features",
-      "A white-label toolkit needs admin control as much as a polished mobile UI",
+      "Admin tools matter as much as a polished consumer UI",
     ],
     architecture:
-      "Flutter consumer apps + Flutter admin panel on Firebase, with encrypted chat, verification, subscriptions, and ad monetization.",
-    role: "Flutter Developer — dating app UX, Firebase integration, admin flows, and store release.",
+      "Flutter consumer app + admin tooling on Firebase, with encrypted chat, verification, subscriptions, and ads.",
+    role: "Flutter Developer — dating UX, Firebase integration, admin flows, and Play Store demo release.",
     performance: [
       "Cross-platform delivery from one Flutter codebase",
       "Efficient Firebase-backed auth and user management",
       "Monetization-ready with subscriptions and ads",
     ],
-    timeline: "Product",
+    timeline: "Product / Demo",
   },
   {
     id: "chess-game",
@@ -690,22 +679,21 @@ export const PROJECTS: Project[] = [
     ],
     techStack: ["Flutter", "Provider", "REST APIs", "Firebase"],
     categories: ["Flutter", "UI", "API"],
-    playStore: "https://play.google.com/store",
     challenges: ["Multi-role coach/user flows", "Low-friction onboarding"],
     solutions: ["Provider-based state across roles", "Guest mode for exploration without signup"],
     lessons: ["Guest access lowers the barrier to discovering coaches"],
     architecture: "Multi-provider Flutter application with role-based modules.",
     role: "Flutter Developer — profiles, ratings, and guest experience.",
-    performance: ["Clear coach discovery flows", "Store-ready releases"],
+    performance: ["Clear coach discovery flows", "Stable role-based navigation"],
     timeline: "Codiant — Present",
   },
   {
     id: "smart-taxi",
     title: "Smart Taxi",
     description:
-      "Complete Uber-clone taxi booking platform with Flutter customer & driver apps, Firebase backend, dispatcher, and dynamic admin panel.",
+      "Flutter ride-hailing platform with customer & driver apps, Firebase backend, dispatcher tools, and a web admin panel.",
     longDescription:
-      "Smart Taxi is a complete, production-ready Uber clone and all-in-one taxi booking app solution built with Flutter 3.x and Firebase. Launch your own ride-hailing app, cab booking platform, online taxi business, parcel delivery service, car rental app, or a full multi-service super app from one codebase. With 4 ride modules (City Cab, Intercity, Parcel, Rental), 9+ payment gateways, a real-time dispatcher panel, and a fully dynamic admin panel, Smart Taxi lets you go live in days — not months. Designed for entrepreneurs, startups, and development agencies, it works as a powerful Uber / Lyft / Ola / Careem / Bolt / Grab / DiDi / InDrive (fare bidding) / Rapido (bike taxi) / Gojek-style super app. The package includes a Customer App, Driver App, responsive Web Admin Panel, Dispatcher Panel, and a dynamic landing page — with real-time GPS tracking, surge pricing, zone-based fares, female-only ride safety mode, SOS emergency alerts, in-app wallet, driver subscriptions, multi-language + RTL, and dark mode — all out of the box.",
+      "Smart Taxi is a multi-service ride-hailing product I built with Flutter and Firebase. It includes a Customer App and Driver App, plus a web admin panel and dispatcher tooling for day-to-day operations. Riders can book City Cab, Intercity, Parcel, and Rental services with realtime GPS tracking, wallet support, and safety features like SOS and female-only ride mode. I focused on keeping customer, driver, and admin flows in sync on one Firebase backend — including payments, surge/zone fares, multi-language + RTL, and light/dark themes.",
     image: "/assets/images/smart-taxi.png",
     screenshots: [
       "/assets/images/smart-taxi.png",
@@ -714,18 +702,15 @@ export const PROJECTS: Project[] = [
       "/assets/images/smart-taxi-themes.png",
     ],
     features: [
-      "Dedicated Customer Application for booking cab, intercity, parcel & rental rides",
-      "Dedicated Driver Application for accepting trips, navigation & earnings",
-      "Responsive Web Admin Panel for full platform management",
-      "Dispatcher panel for real-time ride operations",
-      "4 ride modules: City Cab, Intercity, Parcel, and Rental",
-      "Real-time GPS tracking and live trip updates",
-      "9+ payment gateways (Stripe, PayPal, Razorpay, Paystack, Flutterwave, and more)",
-      "Surge pricing, zone-based fares, and InDrive-style fare bidding",
-      "Female-only ride safety mode and SOS emergency alerts",
-      "In-app wallet and driver subscription plans",
-      "Multi-language + RTL support with light & dark mode",
-      "Dynamic landing page for marketing and onboarding",
+      "Customer app for cab, intercity, parcel, and rental bookings",
+      "Driver app for accepting trips, navigation, and earnings",
+      "Web admin panel for platform management",
+      "Dispatcher panel for realtime ride operations",
+      "Realtime GPS tracking and live trip updates",
+      "Multi-gateway payments, wallet, and fare controls",
+      "Surge pricing and zone-based fares",
+      "Female-only ride mode and SOS emergency alerts",
+      "Multi-language + RTL with light and dark themes",
     ],
     techStack: [
       "Flutter",
@@ -734,34 +719,33 @@ export const PROJECTS: Project[] = [
       "Firebase Auth",
       "Google Maps",
       "Payment Gateways",
-      "Figma",
       "Android",
       "iOS",
     ],
     categories: ["Flutter", "Firebase", "UI", "API"],
     challenges: [
-      "Running customer, driver, admin, and dispatcher flows on one Firebase backend",
-      "Supporting multi-service rides (cab, intercity, parcel, rental) without UX clutter",
-      "Integrating many payment gateways with realtime GPS and surge pricing",
+      "Keeping customer, driver, admin, and dispatcher flows on one Firebase backend",
+      "Supporting multi-service rides without cluttering the booking UX",
+      "Combining payments, GPS, and fare rules reliably",
     ],
     solutions: [
-      "Shared Flutter + Firebase architecture across customer, driver, and admin apps",
-      "Modular ride types with a dynamic admin and dispatcher panel",
-      "Multi-gateway payments plus zone fares, surge, wallet, and safety features",
+      "Shared Flutter + Firebase architecture across apps and admin",
+      "Modular ride types with dedicated admin/dispatcher tooling",
+      "Wallet, multi-gateway payments, and safety features in the same product",
     ],
     lessons: [
-      "Ride-hailing products need equal depth in ops tools and passenger UX",
-      "Firebase + Flutter scales well for realtime taxi and dispatcher systems",
+      "Ride-hailing needs equal investment in ops tools and passenger UX",
+      "Firebase works well when mobile and admin share one source of truth",
     ],
     architecture:
-      "Flutter 3.x customer & driver apps with Firebase backend, responsive web admin, realtime dispatcher panel, Maps GPS, and multi-gateway payments.",
+      "Flutter customer & driver apps with Firebase backend, web admin, dispatcher panel, Maps GPS, and payments.",
     role: "Flutter Developer — customer/driver apps, Firebase flows, admin panel, and ride modules.",
     performance: [
       "Realtime GPS and booking updates via Firebase",
-      "Multi-service ride flows from a single codebase",
-      "Production-ready admin and dispatcher operations",
+      "Multi-service ride flows from a shared codebase",
+      "Admin and dispatcher controls for live operations",
     ],
-    timeline: "Personal / Product",
+    timeline: "Personal Project",
   },
   {
     id: "homehub",
@@ -819,6 +803,52 @@ export const PROJECTS: Project[] = [
       "Clean orange-themed UX for daily family use",
     ],
     timeline: "Client Project",
+  },
+  {
+    id: "routemitra",
+    title: "RouteMitra: Same-Way Rides Promo",
+    description:
+      "Promotional landing page for RouteMitra — a same-way commute and carpool app for daily rides across Indore and Bhopal.",
+    longDescription:
+      "RouteMitra is a marketing landing page built to promote a same-way rides application — think daily carpooling where people heading the same direction share seats, split fares, and commute together. The page introduces the product with a clear hero, live city routes (Indore & Bhopal), feature highlights, match examples, and a simple how-it-works flow. Copy and UI focus on fair fare splitting, intermediate pickups, verified co-commuters, and the local tagline “Safar saath, kharcha kam.” Deployed on Netlify as a fast, conversion-focused promo site for the RouteMitra app.",
+    image: "/assets/images/routemitra.png",
+    screenshots: ["/assets/images/routemitra.png"],
+    features: [
+      "Promotional landing page for same-way / carpool daily rides",
+      "Hero + route marquee for Indore & Bhopal commute corridors",
+      "Explains route-level matching with intermediate pickups & fair fare splits",
+      "Phone mockup for offer-ride and en-route passenger requests",
+      "Features, live matches, corridors, testimonials, and how-it-works sections",
+      "Safety messaging: verified users, women-only rides, SOS",
+      "Google Play and contact CTAs for product conversion",
+      "Responsive Netlify deployment for fast shareable marketing links",
+    ],
+    techStack: ["React", "Vite", "Tailwind CSS", "Netlify", "UI Design"],
+    categories: ["Web", "UI"],
+    liveDemo: "https://routemitra-promo.netlify.app/",
+    challenges: [
+      "Explaining same-way carpooling simply for first-time local users",
+      "Making Indore/Bhopal route value feel real without a full app demo",
+      "Keeping the promo page conversion-focused and lightweight",
+    ],
+    solutions: [
+      "Local route examples, Hindi tagline, and clear fare-split storytelling",
+      "Phone mockup with offer-ride and en-route request UI snippets",
+      "Sectioned landing flow from concept → features → how it works → CTA",
+    ],
+    lessons: [
+      "Regional commute products sell better with familiar routes and pricing",
+      "A strong promo page can validate demand before the full app launches",
+    ],
+    architecture:
+      "Static promotional React landing page hosted on Netlify, designed to market RouteMitra’s same-way ride matching for daily city commutes.",
+    role: "Web developer — promo landing page UI, copy structure, and Netlify deployment.",
+    performance: [
+      "Fast static hosting on Netlify",
+      "Clean responsive hero and section layout",
+      "Shareable live demo for product pitching",
+    ],
+    timeline: "Personal / Product Promo",
   },
 ];
 
@@ -886,17 +916,17 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     id: "2",
-    name: "Upwork Client",
+    name: "Family Organizer Client",
     company: "Upwork",
-    role: "Family Organizer App",
+    role: "HOMEHUB / Family App",
     review:
       "It was a pleasure working with Sachin. The cross-platform family organizer he built for us was excellent — professional, committed to quality, and detail-oriented from start to finish. Highly recommended if you need a project done properly.",
     rating: 5,
-    avatar: "https://ui-avatars.com/api/?name=Upwork+Client&background=14A800&color=fff&size=200",
+    avatar: "https://ui-avatars.com/api/?name=Family+Client&background=14A800&color=fff&size=200",
   },
   {
     id: "3",
-    name: "Upwork Client",
+    name: "React Client",
     company: "Upwork",
     role: "React.js Developer",
     review:
@@ -980,19 +1010,6 @@ export const BLOG_POSTS: BlogPost[] = [
     url: "https://medium.com/@sachin.dev2910/secure-your-flutter-app-with-easy-biometric-authentication-6b1c16b2b493",
   },
   {
-    id: "2",
-    slug: "flutter-tip-simplify-your-loading-states",
-    title: "Flutter Tip: Simplify Your Loading States!",
-    excerpt:
-      "Instead of wrapping your entire UI in inline conditionals, use a cleaner approach for loading spinners in Flutter.",
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
-    tags: ["Flutter", "Tips"],
-    date: "2024-10-08",
-    readTime: "4 min",
-    url: "https://medium.com/@sachin.dev2910",
-  },
-  {
     id: "3",
     slug: "secure-your-flutter-app-block-screen-recording-screenshots",
     title: "Secure Your Flutter App: Block Screen Recording & Screenshots",
@@ -1031,33 +1048,8 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: "6",
-    slug: "simplify-flutter-localization-with-easylocalization",
-    title: "Simplify Flutter Localization with EasyLocalization ✨",
-    excerpt:
-      "App localization made practical with easy_localization — one of the best Flutter plugins for multi-language apps.",
-    image:
-      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
-    tags: ["Flutter", "Localization"],
-    date: "2024-07-02",
-    readTime: "6 min",
-    url: "https://medium.com/@sachin.dev2910",
-  },
-  {
-    id: "7",
-    slug: "connect-firebase-flutter-in-seconds-2023",
-    title: "Connect Firebase + Flutter In Seconds (2023).",
-    excerpt:
-      "A step-by-step guide to connecting your Flutter app to Firebase quickly and correctly.",
-    image: "/assets/images/flutter-firebase.png",
-    tags: ["Flutter", "Firebase"],
-    date: "2023-12-06",
-    readTime: "7 min",
-    url: "https://medium.com/@sachin.dev2910",
-  },
-  {
-    id: "8",
     slug: "publishing-package-on-pub-dev-2023",
-    title: "Publishing Package on Pub.dev (2023)",
+    title: "Publishing Package on Pub.dev",
     excerpt:
       "A clear step-by-step guide to creating and publishing your Dart/Flutter package on pub.dev.",
     image: "/assets/images/pub-dev.png",
@@ -1065,18 +1057,5 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2023-12-01",
     readTime: "8 min",
     url: "https://medium.com/@sachin.dev2910/publishing-package-on-pub-dev-2023-a931837ca56c",
-  },
-  {
-    id: "9",
-    slug: "boost-your-flutter-app-with-google-ads-2023",
-    title: "Boost Your Flutter App with Google Ads: A 2023 Guide!",
-    excerpt:
-      "Integrate Google Ads into your Flutter app with a practical, step-by-step walkthrough.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-    tags: ["Flutter", "Ads"],
-    date: "2023-11-28",
-    readTime: "6 min",
-    url: "https://medium.com/@sachin.dev2910",
   },
 ];

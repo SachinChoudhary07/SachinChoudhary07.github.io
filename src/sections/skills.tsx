@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import {
   Boxes,
   Database,
+  Globe,
   Layers,
   Network,
   Rocket,
@@ -18,6 +19,7 @@ import { cn } from "@/lib/utils";
 
 const CATEGORY_ICONS: Record<string, LucideIcon | IconType> = {
   flutter: SiFlutter,
+  web: Globe,
   backend: Database,
   architecture: Layers,
   state: Boxes,

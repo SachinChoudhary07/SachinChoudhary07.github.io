@@ -28,7 +28,7 @@ export function Footer() {
             Quick Links
           </h3>
           <ul className="space-y-2">
-            {NAV_ITEMS.slice(0, 6).map((item) => (
+            {NAV_ITEMS.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}

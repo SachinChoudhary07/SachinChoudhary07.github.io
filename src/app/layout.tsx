@@ -44,7 +44,8 @@ export const metadata: Metadata = {
     "Dart",
     "Firebase",
     "Cross Platform",
-    "Riverpod",
+    "Provider",
+    "Full Stack Web Developer",
     SITE.name,
   ],
   authors: [{ name: SITE.name, url: SITE.url }],
@@ -70,7 +71,6 @@ export const metadata: Metadata = {
     title: `${SITE.name} | ${SITE.role}`,
     description: SITE.description,
     images: [SITE.ogImage],
-    creator: "@sachinchoudhary",
   },
   robots: {
     index: true,

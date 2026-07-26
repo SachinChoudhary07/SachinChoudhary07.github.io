@@ -168,10 +168,3 @@ body {
 .animate-pulse-glow {
   animation: pulse-glow 5s ease-in-out infinite;
 }
-
-@media (pointer: fine) {
-  .custom-cursor-active,
-  .custom-cursor-active * {
-    cursor: none !important;
-  }
-}

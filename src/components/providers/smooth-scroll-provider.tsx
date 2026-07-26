@@ -19,12 +19,17 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
   const [lenis, setLenis] = useState<Lenis | null>(null);
 
   useEffect(() => {
+    let cancelled = false;
     const instance = new Lenis({
       duration: 1.1,
       smoothWheel: true,
       touchMultiplier: 1.2,
     });
-    setLenis(instance);
+
+    // Defer so React doesn't treat this as a sync setState-in-effect cascade.
+    queueMicrotask(() => {
+      if (!cancelled) setLenis(instance);
+    });
 
     let frame = 0;
     const raf = (time: number) => {
@@ -34,6 +39,7 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
     frame = requestAnimationFrame(raf);
 
     return () => {
+      cancelled = true;
       cancelAnimationFrame(frame);
       instance.destroy();
       setLenis(null);

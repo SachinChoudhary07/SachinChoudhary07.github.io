@@ -40,12 +40,12 @@ export function Contact() {
   });
 
   const onSubmit = async (values: ContactFormValues) => {
-    const isConfigured = (value?: string) =>
+    const isConfigured = (value: string) =>
       Boolean(value && !value.startsWith("your_") && value.trim().length > 0);
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID?.trim() ?? "";
+    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID?.trim() ?? "";
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY?.trim() ?? "";
 
     if (!isConfigured(serviceId) || !isConfigured(templateId) || !isConfigured(publicKey)) {
       toast.error("Email service is not configured yet. Please email me directly instead.");

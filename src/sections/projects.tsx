@@ -29,7 +29,7 @@ export function Projects() {
         <SectionHeading
           eyebrow="Portfolio"
           title="Featured Projects"
-          description="A selection of production apps I've designed, built, and shipped end-to-end."
+          description="Production Flutter and web projects I've contributed to — from company apps to client builds and personal products."
         />
 
         <Reveal>
@@ -38,6 +38,7 @@ export function Projects() {
               <button
                 key={filter}
                 type="button"
+                aria-pressed={activeFilter === filter}
                 onClick={() => setActiveFilter(filter)}
                 className={cn(
                   "relative rounded-full px-4 py-2 text-sm font-medium transition-colors",
