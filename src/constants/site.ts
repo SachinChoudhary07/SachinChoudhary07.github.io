@@ -262,6 +262,75 @@ export const EXPERIENCES: Experience[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: "tripkhata",
+    title: "TripKhata: Group Trip Expense Splitter",
+    description:
+      "Offline-first Flutter app for splitting group trip expenses: add spends by Hinglish voice, split fairly, and settle up over UPI.",
+    longDescription:
+      "TripKhata is an Android app I designed and built for Indian road trips, where one friend pays for petrol, another for the dhaba and someone else for the hotel. Say “Rahul ne 1500 ka petrol bharwaya” and it is saved, split and added to everyone's balance, even with no signal on the highway. Everything is stored on the phone first (Drift/SQLite) and synced to Firebase when the network returns. Expenses can be split equally, by amount or by shares, only between the people who were part of them, and the app computes the fewest payments needed to settle the trip, with a one-tap UPI payment pre-filled for GPay or PhonePe. Trips can be shared with a 6-letter code, friends get push notifications when someone adds an expense, and every trip ends with a route map of stops and a shareable PDF/CSV summary. Released as a signed APK on GitHub.",
+    image: "/assets/images/tripkhata-cover.jpg",
+    screenshots: [
+      "/assets/images/tripkhata-cover.jpg",
+      "/assets/images/tripkhata-offline-first.jpg",
+      "/assets/images/tripkhata-hinglish-voice.jpg",
+      "/assets/images/tripkhata-fair-splits.jpg",
+      "/assets/images/tripkhata-upi-settle-up.jpg",
+      "/assets/images/tripkhata-route-stops.jpg",
+      "/assets/images/tripkhata-summary-pdf.jpg",
+    ],
+    features: [
+      "Offline-first: every expense is saved on the phone and syncs when there's signal",
+      "Speak to add: on-device speech recognition with a Hinglish parser (“pandrah sau”, “dedh hazaar”, “2k”)",
+      "Home screen widget with a mic button for quick voice entry",
+      "Split equally, by amount or by shares, down to the paisa, only between the people involved",
+      "Balances with the fewest payments to settle, plus one-tap UPI pay (upi://pay)",
+      "Share a trip with a 6-letter code and get push notifications when friends add expenses",
+      "Check-ins at hotels, dhabas and petrol pumps with an OpenStreetMap route log",
+      "Trip summary with PDF/CSV export, bill photos and budget alerts",
+      "Google sign-in, in-app account deletion, no ads and no tracking",
+    ],
+    techStack: [
+      "Flutter",
+      "BLoC",
+      "Drift (SQLite)",
+      "Firebase",
+      "Firestore",
+      "Cloud Functions",
+      "FCM",
+      "flutter_map",
+      "Speech-to-Text",
+    ],
+    categories: ["Flutter", "Firebase", "UI"],
+    github: "https://github.com/SachinChoudhary07/Trip-Khata",
+    liveDemo: "https://github.com/SachinChoudhary07/Trip-Khata/releases/latest",
+    challenges: [
+      "Highways have no network, but expenses must never be lost",
+      "Parsing casual Hinglish speech into an amount, payer and split",
+      "Splitting fairly when only some members shared an item, without rounding errors",
+      "Keeping a shared trip in sync across several phones that go offline",
+    ],
+    solutions: [
+      "Local Drift database as the source of truth with a queued sync to Firestore",
+      "Custom Hinglish number and intent parser that highlights anything uncertain for a one-tap fix",
+      "All money stored in paise, with per-expense participants and a minimal-payments settle-up algorithm",
+      "Firestore security rules scoped to trip members and a Cloud Function that pushes FCM updates on each expense",
+    ],
+    lessons: [
+      "Offline-first changes every design decision, from IDs to conflict handling",
+      "Voice input works when the app shows what it understood and makes corrections cheap",
+      "Small local touches (Hinglish, UPI, dhabas) make a utility app feel built for its users",
+    ],
+    architecture:
+      "Flutter UI with BLoC/Cubits over a TripRepository backed by Drift (SQLite). A sync layer queues changes to Firestore; Firebase Auth (Google), Storage for bill photos, Cloud Functions + FCM for group notifications, and Crashlytics for stability.",
+    role: "Solo product: idea, UI design, Flutter app, Firebase backend, Cloud Functions, and APK releases.",
+    performance: [
+      "Works fully offline with instant local writes",
+      "Sync and push notifications when the network returns",
+      "Signed release APKs published through GitHub Releases",
+    ],
+    timeline: "Personal Product — 2026",
+  },
+  {
     id: "personal-portfolio",
     title: "Personal Portfolio Website",
     description:
