@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.trip_khata.trip_khata",
+      "sha256_cert_fingerprints": [
+        "D2:7E:0D:45:7F:5C:17:FB:D9:EC:86:0C:1A:FB:24:A1:E4:C8:7F:8D:FF:9E:05:8B:D7:9B:C1:5F:79:8E:EA:2E"
+      ]
+    }
+  }
+]
