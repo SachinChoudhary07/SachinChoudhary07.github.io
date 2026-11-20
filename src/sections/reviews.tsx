@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/shared/reveal";
-import { Accent, SectionHeader } from "@/components/shared/section-header";
+import { SectionHeader } from "@/components/shared/section-header";
 import { Stars } from "@/components/shared/stars";
 import { TESTIMONIALS } from "@/constants/site";
 
@@ -8,13 +8,8 @@ export function Reviews() {
     <section id="reviews" className="border-t border-border py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeader
-          index="04"
           label="Client reviews"
-          title={
-            <>
-              What clients say <Accent>after the project.</Accent>
-            </>
-          }
+          title="What clients said"
         />
 
         <div className="columns-1 gap-4 sm:columns-2 lg:columns-3">

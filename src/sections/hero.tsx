@@ -19,9 +19,8 @@ export function Hero() {
               className="rise inline-flex items-center gap-2.5 rounded-full border border-border bg-surface py-1.5 pr-4 pl-3 text-sm text-subtext"
               style={delay(0)}
             >
-              <span className="relative flex size-2">
-                <span className="ping-soft absolute inset-0 rounded-full bg-ok" />
-                <span className="relative size-2 rounded-full bg-ok" />
+              <span className="flex size-2">
+                <span className="size-2 rounded-full bg-ok" />
               </span>
               {HERO.availability}
             </p>
@@ -63,7 +62,7 @@ export function Hero() {
           >
             <div className="flex items-center justify-between">
               <Stars rating={t.rating} />
-              <span className="eyebrow">Client review</span>
+              <span className="label">Client review</span>
             </div>
             <blockquote className="mt-4 text-[1.05rem] leading-relaxed text-foreground">
               “{t.review}”

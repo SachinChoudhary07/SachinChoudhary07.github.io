@@ -82,7 +82,7 @@ export const HERO = {
     lead: "I build mobile apps, web dashboards & AI features for startups,",
     accent: "from idea to App Store.",
   },
-  sub: "I'm Sachin, an independent product developer. I design, build and ship Flutter apps for iOS and Android, the web admin panels behind them, and practical AI features like transcription and image recognition. One person, start to finish, no hand-offs.",
+  sub: "I'm Sachin. I've been building Flutter apps for over 4 years, and now I work directly with founders and small teams. I can build your iOS and Android app, the admin panel you'll run it from, and AI features like transcription or food recognition, and I'm still around after launch.",
 };
 
 export const STATS: Stat[] = [
@@ -96,7 +96,7 @@ export const SERVICES: Service[] = [
   {
     id: "mobile",
     title: "Mobile apps",
-    outcome: "Your app on both stores, from one codebase.",
+    outcome: "One Flutter codebase, released on both stores.",
     points: [
       "MVP to App Store and Play Store release",
       "Auth, payments, subscriptions, chat, maps",
@@ -107,7 +107,7 @@ export const SERVICES: Service[] = [
   {
     id: "web",
     title: "Web apps & admin panels",
-    outcome: "The dashboard your team runs the business from.",
+    outcome: "The panel your team uses to manage users, orders and content.",
     points: [
       "Admin panels for users, orders and content",
       "Customer-facing web apps and landing pages",
@@ -118,7 +118,7 @@ export const SERVICES: Service[] = [
   {
     id: "ai",
     title: "AI features",
-    outcome: "AI that saves your users real time, not a demo.",
+    outcome: "Transcription, image recognition or a chatbot, built properly into your app.",
     points: [
       "Speech-to-text and meeting / visit transcription",
       "Image recognition (food, documents, products)",
@@ -129,7 +129,7 @@ export const SERVICES: Service[] = [
   {
     id: "maintain",
     title: "Fix, upgrade & maintain",
-    outcome: "An existing app that's stable, fast and store-compliant.",
+    outcome: "For apps that crash, feel slow, or got rejected by a store.",
     points: [
       "Bug fixing and crash reduction",
       "Performance work and Flutter / SDK upgrades",
@@ -349,7 +349,7 @@ export const PROCESS: ProcessStep[] = [
   {
     title: "Free scope & estimate",
     description:
-      "We talk through your idea on a call or chat. Within 48 hours you get a written scope, a timeline and a fixed price. No cost, no obligation.",
+      "We talk through your idea on a call or over chat. Within 48 hours I send a written scope, a timeline and a fixed price. It's free and you're not committed to anything.",
   },
   {
     title: "Fixed price, clear milestones",
@@ -434,7 +434,7 @@ export const ABOUT = {
   paragraphs: [
     "I've spent 4+ years building apps that real people use every day: AI scribes for doctors, calorie trackers, ride-hailing platforms, dating apps and online stores, across healthcare, fitness, legal-tech and e-commerce.",
     "Before going independent I worked in product teams at Codiant, Mactosys and IndVibe, where I owned features end to end and shipped them to the App Store and Play Store. Now I work directly with founders and teams as a freelancer, full-time.",
-    "When you hire me you work with me: the person who scopes it, builds it, ships it and answers your messages.",
+    "If you hire me, you deal with me directly, from the first call to the store release and the fixes after it.",
   ],
 };
 

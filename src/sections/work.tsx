@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/shared/reveal";
-import { Accent, SectionHeader } from "@/components/shared/section-header";
+import { SectionHeader } from "@/components/shared/section-header";
 import { CASE_STUDIES, MORE_WORK } from "@/constants/site";
 import { cn } from "@/lib/utils";
 import { CaseVisual } from "./case-visual";
@@ -10,14 +10,9 @@ export function Work() {
     <section id="work" className="border-t border-border py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeader
-          index="02"
           label="Selected work"
-          title={
-            <>
-              Products I&apos;ve built, <Accent>shipped and supported.</Accent>
-            </>
-          }
-          intro="Six projects across healthcare, fitness, mobility, e-commerce, social and gaming. Each one started as a problem someone needed solved."
+          title="Apps I've built and shipped"
+          intro="Six projects I worked on end to end. Some were for clients, some I built at the companies I worked for, and a couple are my own."
         />
 
         <div className="space-y-20 sm:space-y-28">
@@ -32,7 +27,7 @@ export function Work() {
               </Reveal>
 
               <Reveal delay={80} className="lg:col-span-6">
-                <p className="eyebrow">{study.context}</p>
+                <p className="label">{study.context}</p>
                 <h3 className="mt-3 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl">
                   {study.name}
                 </h3>
@@ -99,7 +94,7 @@ export function Work() {
         <div id="more-work" className="mt-24 sm:mt-32">
           <Reveal className="mb-8 flex items-end justify-between gap-6">
             <h3 className="text-2xl font-semibold tracking-tight">More work</h3>
-            <p className="eyebrow hidden sm:block">Apps, client builds &amp; open source</p>
+            
           </Reveal>
           <Reveal as="ul" className="border-t border-border">
             {MORE_WORK.map((item) => {
@@ -107,7 +102,7 @@ export function Work() {
                 <>
                   <span className="font-medium sm:w-44 sm:shrink-0">{item.name}</span>
                   <span className="flex-1 text-[0.95rem] text-subtext">{item.description}</span>
-                  <span className="hidden shrink-0 font-mono text-xs text-faint md:block md:w-52 md:text-right">
+                  <span className="hidden shrink-0 text-sm text-faint md:block md:w-52 md:text-right">
                     {item.tags.join(" · ")}
                   </span>
                   <span className="flex w-28 shrink-0 items-center gap-1 text-sm sm:justify-end">

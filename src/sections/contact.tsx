@@ -1,7 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { BrandIcon } from "@/components/shared/brand-icon";
 import { Reveal } from "@/components/shared/reveal";
-import { Accent } from "@/components/shared/section-header";
 import { CONTACT_CHANNELS } from "@/constants/site";
 import { ContactForm } from "./contact-form";
 
@@ -11,13 +10,14 @@ export function Contact() {
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <div className="grid gap-14 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-5">
-            <p className="eyebrow !text-background/50">06 / Contact</p>
-            <h2 className="mt-5 text-[2.2rem] leading-[1.05] font-semibold tracking-[-0.03em] text-balance sm:text-5xl">
-              Tell me what you want to build. <Accent>I&apos;ll send a free estimate.</Accent>
+            <p className="label !text-background/55">Contact</p>
+            <h2 className="mt-3 text-[2.2rem] leading-[1.1] font-semibold tracking-[-0.03em] text-balance sm:text-5xl">
+              Tell me about your project
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-background/70">
-              Share a few lines about your idea or the app you need help with. I reply within 24
-              hours with questions or a rough scope, timeline and price.
+              A few lines about the idea, or the app you need help with, is enough. I&apos;ll reply
+              within a day with questions, or with a rough scope, timeline and price. The estimate
+              is free.
             </p>
 
             <ul className="mt-10 divide-y divide-background/15 border-y border-background/15">

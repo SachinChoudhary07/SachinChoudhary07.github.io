@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { Reveal } from "@/components/shared/reveal";
-import { Accent, SectionHeader } from "@/components/shared/section-header";
+import { SectionHeader } from "@/components/shared/section-header";
 import { ABOUT, EXPERIENCE, SITE, STACK_GROUPS, WRITING } from "@/constants/site";
 
 export function About() {
@@ -9,13 +9,8 @@ export function About() {
     <section id="about" className="border-t border-border py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeader
-          index="05"
           label="About"
-          title={
-            <>
-              A developer who thinks <Accent>like a product owner.</Accent>
-            </>
-          }
+          title="A bit about me"
         />
 
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-14">
@@ -42,7 +37,7 @@ export function About() {
             </Reveal>
 
             <Reveal className="mt-12">
-              <h3 className="eyebrow">Tech stack</h3>
+              <h3 className="label">Tech stack</h3>
               <dl className="mt-4 divide-y divide-border border-y border-border">
                 {STACK_GROUPS.map((group) => (
                   <div key={group.title} className="grid gap-2 py-4 sm:grid-cols-[8rem_1fr]">
@@ -54,11 +49,11 @@ export function About() {
             </Reveal>
 
             <Reveal className="mt-12">
-              <h3 className="eyebrow">Experience</h3>
+              <h3 className="label">Experience</h3>
               <ol className="mt-4 divide-y divide-border border-y border-border">
                 {EXPERIENCE.map((item) => (
                   <li key={item.company} className="grid gap-1 py-4 sm:grid-cols-[10rem_1fr] sm:gap-6">
-                    <span className="font-mono text-sm text-faint sm:pt-0.5">{item.period}</span>
+                    <span className="text-sm text-faint sm:pt-0.5">{item.period}</span>
                     <div>
                       <p className="font-medium">
                         {item.role} <span className="font-normal text-subtext">· {item.company}</span>
@@ -71,7 +66,7 @@ export function About() {
             </Reveal>
 
             <Reveal className="mt-12">
-              <h3 className="eyebrow">Open source &amp; writing</h3>
+              <h3 className="label">Open source &amp; writing</h3>
               <ul className="mt-4 divide-y divide-border border-y border-border">
                 {WRITING.map((item) => (
                   <li key={item.href}>
