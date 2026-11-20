@@ -16,9 +16,6 @@ export function SiteFooter() {
           © {new Date().getFullYear()} {SITE.name}. Independent product developer, Indore, India.
         </p>
         <div className="flex items-center gap-5">
-          <a href={SITE.resume} target="_blank" rel="noreferrer" className="hover:text-foreground">
-            Résumé (PDF)
-          </a>
           {links.map((link) => (
             <a
               key={link.name}

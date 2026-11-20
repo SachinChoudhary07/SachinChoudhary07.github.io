@@ -83,7 +83,10 @@ export function Hero() {
               </span>
               <span className="text-sm">
                 <span className="block font-medium">{t.name}</span>
-                <span className="text-subtext">{t.project}</span>
+                <span className="text-subtext">
+                  {t.project}
+                  {t.source ? ` · ${t.source}` : ""}
+                </span>
               </span>
             </figcaption>
           </figure>
