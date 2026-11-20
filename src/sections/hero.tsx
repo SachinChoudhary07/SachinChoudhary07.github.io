@@ -4,7 +4,6 @@ import { Accent } from "@/components/shared/section-header";
 import { Stars } from "@/components/shared/stars";
 import { ButtonLink } from "@/components/ui/button";
 import { FEATURED_TESTIMONIAL, HERO, SITE, STATS } from "@/constants/site";
-import { isEstimatorEnabled } from "@/lib/estimator";
 
 const delay = (ms: number) => ({ "--rise-delay": `${ms}ms` }) as React.CSSProperties;
 
@@ -55,15 +54,6 @@ export function Hero() {
                 <ArrowDown />
               </ButtonLink>
             </div>
-
-            {isEstimatorEnabled ? (
-              <p className="rise mt-5 text-sm text-subtext" style={delay(280)}>
-                Not sure what it would cost?{" "}
-                <a href="#estimator" className="font-medium text-foreground underline underline-offset-4">
-                  Try my AI project estimator
-                </a>
-              </p>
-            ) : null}
           </div>
 
           <figure

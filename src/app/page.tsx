@@ -1,7 +1,5 @@
 import { About } from "@/sections/about";
-import { isEstimatorEnabled } from "@/lib/estimator";
 import { Contact } from "@/sections/contact";
-import { Estimator } from "@/sections/estimator";
 import { Hero } from "@/sections/hero";
 import { Process } from "@/sections/process";
 import { Reviews } from "@/sections/reviews";
@@ -14,7 +12,6 @@ export default function HomePage() {
       <Hero />
       <Services />
       <Work />
-      {isEstimatorEnabled ? <Estimator /> : null}
       <Process />
       <Reviews />
       <About />

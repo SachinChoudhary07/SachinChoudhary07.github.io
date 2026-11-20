@@ -1,5 +1,0 @@
-# Copy to .dev.vars for local `npm run dev`. These are Cloudflare's official
-# Turnstile TEST keys (always pass). Never use them in production.
-TURNSTILE_SECRET=1x0000000000000000000000000000000AA
-# Return a canned estimate instead of calling Workers AI (no login needed).
-MOCK_AI=true

@@ -43,6 +43,3 @@ next-env.d.ts
 .idea
 .vscode
 
-# Cloudflare Worker (estimator)
-worker/.dev.vars
-worker/.wrangler/
