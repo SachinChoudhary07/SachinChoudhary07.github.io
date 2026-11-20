@@ -26,7 +26,6 @@ export const SITE = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://sachinchoudhary07.github.io",
   photo: "/assets/images/sachin-choudhary.png",
   ogImage: "/assets/images/og-image.png",
-  resume: "/resume/Sachin_Choudhary_Flutter_Resume.pdf",
 } as const;
 
 export const NAV_ITEMS: NavItem[] = [
@@ -372,6 +371,7 @@ export const FEATURED_TESTIMONIAL: Testimonial = {
   id: "vinu",
   name: "Vinu V.",
   project: "Real-money chess app",
+  source: "Freelancer.com",
   review:
     "Sachin delivered my Flutter chess app exactly as scoped: 1v1 gameplay, wallet, and Razorpay integration. Responsive, supportive, and always on time with updates. Happy with the work and highly recommend him for mobile app projects.",
   rating: 5,
@@ -400,6 +400,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "hector",
     name: "Hector Alberto D.",
     project: "Flutter + Firebase sign-in",
+    source: "Freelancer.com",
     review:
       "He did a great job integrating Google Login with Firebase in Flutter. Clean work, clear communication, and I'd happily hire him again.",
     rating: 5,
@@ -408,6 +409,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "ajay",
     name: "Ajay J.",
     project: "Grocery shop website",
+    source: "Freelancer.com",
     review:
       "Very good experience. He delivered on time and the work looked polished. Reliable guy who gets things done.",
     rating: 5,
@@ -416,6 +418,7 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "srikar",
     name: "Srikar B.",
     project: "PAN card app",
+    source: "Freelancer.com",
     review:
       "Very good and smooth experience. Sachin understood the requirements quickly and delivered a solid project without drama.",
     rating: 5,
@@ -424,9 +427,28 @@ export const TESTIMONIALS: Testimonial[] = [
     id: "sai",
     name: "Sai R.",
     project: "Web & Flutter work",
+    source: "Freelancer.com",
     review:
       "Budget-friendly, knowledgeable, and excellent communication. Needed work across React and Flutter, and he handled it well.",
     rating: 5,
+  },
+  {
+    id: "flutter-update",
+    name: "Freelancer.com client",
+    project: "Flutter app update",
+    source: "Freelancer.com",
+    review:
+      "Great work on a focused Flutter update. Quick turnaround, clean delivery, and exactly what we needed.",
+    rating: 5,
+  },
+  {
+    id: "sunil",
+    name: "Sunil P.",
+    project: "Flutter feature showcase",
+    source: "Freelancer.com",
+    review:
+      "Good to work with Sachin. Professional attitude, very responsive, and smooth collaboration throughout the project.",
+    rating: 4,
   },
 ];
 
