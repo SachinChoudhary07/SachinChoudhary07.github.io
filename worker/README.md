@@ -37,9 +37,9 @@ NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA
 3. Create a Turnstile widget (Cloudflare dashboard → Turnstile) for `sachinchoudhary07.github.io`.
 4. `npx wrangler secret put TURNSTILE_SECRET` and paste the widget's secret key.
 5. `npm run deploy` and note the `https://portfolio-estimator.<you>.workers.dev` URL.
-6. In GitHub → repo Settings → Secrets and variables → Actions → **Variables**, add
-   `NEXT_PUBLIC_ESTIMATOR_URL` (the workers.dev URL) and `NEXT_PUBLIC_TURNSTILE_SITE_KEY`.
-7. Re-run the "Deploy to GitHub Pages" workflow. The section appears only when both variables are set.
+6. Put the Worker URL and Turnstile site key in `.env.production` at the repo root:
+   `NEXT_PUBLIC_ESTIMATOR_URL` and `NEXT_PUBLIC_TURNSTILE_SITE_KEY` (both public).
+7. Push to main. The section appears only when both values are set.
 
 ## Cost
 
