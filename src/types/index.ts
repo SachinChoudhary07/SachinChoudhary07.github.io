@@ -33,10 +33,10 @@ export type CaseStudyVisual =
   | { kind: "cover"; images: [string]; tone: string }
   /** Two or three phone screenshots side by side. */
   | { kind: "phones"; images: string[]; tone: string }
+  /** Tall showcase posters side by side; each opens full size on click. */
+  | { kind: "posters"; images: string[]; tone: string }
   /** A logo or icon on a tinted panel. */
-  | { kind: "logo"; images: [string]; tone: string }
-  /** No screenshots yet: renders a designed placeholder graphic. */
-  | { kind: "chessboard"; images: []; tone: string };
+  | { kind: "logo"; images: [string]; tone: string };
 
 export type CaseStudy = {
   id: string;

@@ -2,6 +2,7 @@ import { BrandIcon } from "@/components/shared/brand-icon";
 import { PROFILE_LINKS, SITE } from "@/constants/site";
 
 const links = [
+  { name: "upwork" as const, label: "Upwork", href: PROFILE_LINKS.upwork },
   { name: "linkedin" as const, label: "LinkedIn", href: PROFILE_LINKS.linkedin },
   { name: "github" as const, label: "GitHub", href: PROFILE_LINKS.github },
   { name: "medium" as const, label: "Medium", href: PROFILE_LINKS.medium },

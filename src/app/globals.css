@@ -156,9 +156,3 @@ body {
     animation: none;
   }
 }
-
-/* Chessboard placeholder for case studies without screenshots */
-.chessboard {
-  /* 8x8 board: each 25% tile holds a 2x2 checker */
-  background: repeating-conic-gradient(#e9e4d4 0 25%, #3d5a45 0 50%) 0 0 / 25% 25%;
-}

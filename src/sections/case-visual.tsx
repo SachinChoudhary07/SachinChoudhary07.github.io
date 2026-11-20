@@ -43,6 +43,30 @@ export function CaseVisual({ study }: { study: CaseStudy }) {
         </div>
       ) : null}
 
+      {visual.kind === "posters" ? (
+        <div className="absolute inset-0 flex items-center justify-center gap-[4%] px-[6%] py-[6%]">
+          {visual.images.map((src, i) => (
+            <a
+              key={src}
+              href={src}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open ${name} screenshots ${i + 1} full size`}
+              className="relative h-full overflow-hidden rounded-lg shadow-[0_18px_40px_-18px_rgba(0,0,0,0.6)] transition-transform duration-300 hover:-translate-y-1"
+              style={{ aspectRatio: "4 / 5" }}
+            >
+              <Image
+                src={src}
+                alt={`${name} app screens, part ${i + 1}`}
+                fill
+                sizes="(min-width: 1024px) 260px, 45vw"
+                className="object-contain"
+              />
+            </a>
+          ))}
+        </div>
+      ) : null}
+
       {visual.kind === "logo" ? (
         <div className="absolute inset-0 grid place-items-center p-[12%]">
           <div className="relative h-full w-full">
@@ -54,18 +78,6 @@ export function CaseVisual({ study }: { study: CaseStudy }) {
               className="object-contain mix-blend-multiply"
             />
           </div>
-        </div>
-      ) : null}
-
-      {visual.kind === "chessboard" ? (
-        <div className="absolute inset-0 grid place-items-center p-[10%]">
-          <div
-            aria-hidden
-            className="chessboard aspect-square h-full rotate-[-8deg] rounded-xl opacity-90 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)]"
-          />
-          <span className="absolute bottom-5 left-5 rounded-full bg-black/50 px-3 py-1 font-mono text-xs text-white/80 backdrop-blur">
-            {name}
-          </span>
         </div>
       ) : null}
     </div>

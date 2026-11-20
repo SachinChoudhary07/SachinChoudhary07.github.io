@@ -60,11 +60,16 @@ export const CONTACT_CHANNELS: ContactChannel[] = [
     value: "in/sachin-dev2910",
     href: "https://www.linkedin.com/in/sachin-dev2910",
   },
-  // Upwork: add your profile here when ready, e.g.
-  // { id: "upwork", label: "Upwork", value: "Sachin C.", href: "https://www.upwork.com/freelancers/~..." },
+  {
+    id: "upwork",
+    label: "Upwork",
+    value: "Hire me on Upwork",
+    href: "https://www.upwork.com/freelancers/~01d26750bc64fd86bd",
+  },
 ];
 
 export const PROFILE_LINKS = {
+  upwork: "https://www.upwork.com/freelancers/~01d26750bc64fd86bd",
   linkedin: "https://www.linkedin.com/in/sachin-dev2910",
   github: "https://github.com/SachinChoudhary07",
   medium: "https://medium.com/@sachin.dev2910",
@@ -271,10 +276,16 @@ export const CASE_STUDIES: CaseStudy[] = [
       "In-game chat with report and block moderation",
     ],
     stack: ["Flutter", "Firebase", "Firestore real-time", "Razorpay"],
-    // Add screenshots/link later: switch visual to { kind: "phones", images: [...] }
-    // and add a { label, href } entry to links.
+    // Add a store link later as a { label, href } entry here.
     links: [],
-    visual: { kind: "chessboard", images: [], tone: "#1f2a22" },
+    visual: {
+      kind: "posters",
+      images: [
+        "/assets/images/chess-arena-gameplay.webp",
+        "/assets/images/chess-arena-social.webp",
+      ],
+      tone: "#0f1a14",
+    },
   },
 ];
 
