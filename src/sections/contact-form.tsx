@@ -1,6 +1,5 @@
 "use client";
 
-import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, CircleCheck, LoaderCircle } from "lucide-react";
 import { useState } from "react";
@@ -12,6 +11,7 @@ import { Input, Select } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { BUDGETS, PROJECT_TYPES, SITE, WHATSAPP_URL } from "@/constants/site";
+import { isEmailConfigured, sendLead } from "@/lib/emailjs";
 
 const schema = z.object({
   name: z.string().trim().min(2, "Please enter your name"),
@@ -22,14 +22,6 @@ const schema = z.object({
 });
 
 type FormValues = z.infer<typeof schema>;
-
-const EMAILJS = {
-  serviceId: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID?.trim() ?? "",
-  templateId: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID?.trim() ?? "",
-  publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY?.trim() ?? "",
-};
-
-const isConfigured = Object.values(EMAILJS).every((v) => v.length > 0 && !v.startsWith("your_"));
 
 function FieldError({ message }: { message?: string }) {
   return message ? <p className="text-sm text-red-600 dark:text-red-400">{message}</p> : null;
@@ -48,32 +40,24 @@ export function ContactForm() {
   });
 
   const onSubmit = async (values: FormValues) => {
-    if (!isConfigured) {
+    if (!isEmailConfigured) {
       toast.error(`The form is offline right now. Please email me at ${SITE.email}.`);
       return;
     }
 
     try {
-      await emailjs.send(
-        EMAILJS.serviceId,
-        EMAILJS.templateId,
-        {
-          from_name: values.name,
-          from_email: values.email,
-          reply_to: values.email,
-          subject: `Project inquiry: ${values.projectType} (${values.budget})`,
-          message: [
-            `Project type: ${values.projectType}`,
-            `Budget: ${values.budget}`,
-            "",
-            values.message,
-          ].join("\n"),
-          project_type: values.projectType,
-          budget: values.budget,
-          to_email: SITE.email,
-        },
-        { publicKey: EMAILJS.publicKey }
-      );
+      await sendLead({
+        name: values.name,
+        email: values.email,
+        subject: `Project inquiry: ${values.projectType} (${values.budget})`,
+        message: [
+          `Project type: ${values.projectType}`,
+          `Budget: ${values.budget}`,
+          "",
+          values.message,
+        ].join("\n"),
+        extra: { project_type: values.projectType, budget: values.budget },
+      });
       setSentTo(values.email);
       reset();
     } catch {

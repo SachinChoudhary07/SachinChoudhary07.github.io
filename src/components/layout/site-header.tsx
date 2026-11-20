@@ -5,9 +5,14 @@ import { useTheme } from "next-themes";
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { Button, ButtonLink } from "@/components/ui/button";
 import { NAV_ITEMS, SITE } from "@/constants/site";
+import { isEstimatorEnabled } from "@/lib/estimator";
 import { cn } from "@/lib/utils";
 
 const subscribe = () => () => {};
+
+const NAV = isEstimatorEnabled
+  ? [NAV_ITEMS[0], { label: "Estimator", href: "#estimator" }, ...NAV_ITEMS.slice(1)]
+  : NAV_ITEMS;
 
 function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -69,7 +74,7 @@ export function SiteHeader() {
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
-          {NAV_ITEMS.map((item) => (
+          {NAV.map((item) => (
             <li key={item.href}>
               <a
                 href={item.href}
@@ -103,7 +108,7 @@ export function SiteHeader() {
       {open ? (
         <div id="mobile-nav" className="h-[calc(100dvh-4rem)] border-t border-border px-5 md:hidden">
           <ul className="flex flex-col py-4">
-            {NAV_ITEMS.map((item) => (
+            {NAV.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}

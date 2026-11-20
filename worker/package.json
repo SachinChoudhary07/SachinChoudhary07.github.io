@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-estimator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --port 8787",
+    "deploy": "wrangler deploy",
+    "test": "node --experimental-strip-types --no-warnings --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261118.1",
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.0",
+    "wrangler": "^4.36.0"
+  }
+}
