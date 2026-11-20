@@ -1,50 +1,49 @@
 import type { Metadata, Viewport } from "next";
-import { JetBrains_Mono, Outfit, Syne } from "next/font/google";
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
 import { AppProviders } from "@/components/providers/app-providers";
-import { BackToTop } from "@/components/effects/back-to-top";
-import { CommandPalette } from "@/components/effects/command-palette";
-import { LoadingScreen } from "@/components/effects/loading-screen";
-import { MouseSpotlight } from "@/components/effects/mouse-spotlight";
-import { ScrollProgress } from "@/components/effects/scroll-progress";
 import { JsonLd } from "@/components/shared/json-ld";
 import { SITE } from "@/constants/site";
 import "./globals.css";
 
-const outfit = Outfit({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-geist",
   display: "swap",
 });
 
-const syne = Syne({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-geist-mono",
   display: "swap",
 });
 
-const jetbrains = JetBrains_Mono({
+const instrument = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-jetbrains",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-instrument",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} | ${SITE.role}`,
+    default: SITE.title,
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
+  applicationName: SITE.name,
   keywords: [
-    "Flutter Developer",
-    "Mobile App Developer",
-    "Dart",
-    "Firebase",
-    "Cross Platform",
-    "Provider",
-    "Full Stack Web Developer",
+    "freelance Flutter developer",
+    "Flutter app developer for hire",
+    "full-stack freelance developer",
+    "mobile app developer India",
+    "React Next.js admin panel developer",
+    "AI app developer",
+    "MVP app development",
+    "iOS and Android app development",
     SITE.name,
   ],
   authors: [{ name: SITE.name, url: SITE.url }],
@@ -53,7 +52,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: SITE.url,
-    title: `${SITE.name} | ${SITE.role}`,
+    title: SITE.title,
     description: SITE.description,
     siteName: SITE.name,
     images: [
@@ -61,13 +60,13 @@ export const metadata: Metadata = {
         url: SITE.ogImage,
         width: 1200,
         height: 630,
-        alt: `${SITE.name} — ${SITE.role}`,
+        alt: `${SITE.name}, freelance Flutter & full-stack developer`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} | ${SITE.role}`,
+    title: SITE.title,
     description: SITE.description,
     images: [SITE.ogImage],
   },
@@ -96,8 +95,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#050816" },
-    { media: "(prefers-color-scheme: light)", color: "#f4f7fb" },
+    { media: "(prefers-color-scheme: dark)", color: "#0e0e0d" },
+    { media: "(prefers-color-scheme: light)", color: "#fafaf7" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -112,28 +111,25 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${outfit.variable} ${syne.variable} ${jetbrains.variable} h-full scroll-smooth antialiased`}
+      className={`${geist.variable} ${geistMono.variable} ${instrument.variable} h-full`}
     >
+      <head>
+        <noscript>
+          <style>{`.reveal{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+      </head>
       <body className="min-h-full bg-background font-sans text-foreground">
         <JsonLd />
         <AppProviders>
           <a
             href="#main"
-            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:text-white"
+            className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:text-accent-fg"
           >
             Skip to content
           </a>
-          <LoadingScreen />
-          <ScrollProgress />
-          <MouseSpotlight />
-          <div className="noise-overlay" aria-hidden />
-          <Navbar />
-          <main id="main" className="relative z-10 flex-1">
-            {children}
-          </main>
-          <Footer />
-          <BackToTop />
-          <CommandPalette />
+          <SiteHeader />
+          <main id="main">{children}</main>
+          <SiteFooter />
         </AppProviders>
       </body>
     </html>

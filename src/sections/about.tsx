@@ -1,76 +1,98 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Reveal, SectionHeading } from "@/components/shared/section-heading";
-import { ABOUT, SITE } from "@/constants/site";
-
-const ABOUT_BLOCKS: { key: keyof typeof ABOUT; title: string }[] = [
-  { key: "intro", title: "Who I Am" },
-  { key: "whatIDo", title: "What I Do" },
-  { key: "experience", title: "Experience" },
-  { key: "passion", title: "Passion" },
-  { key: "currentFocus", title: "Current Focus" },
-];
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { Reveal } from "@/components/shared/reveal";
+import { Accent, SectionHeader } from "@/components/shared/section-header";
+import { ABOUT, EXPERIENCE, SITE, STACK_GROUPS, WRITING } from "@/constants/site";
 
 export function About() {
   return (
-    <section id="about" className="relative py-14 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="About Me"
-          title="The Developer Behind the Code"
-          description="A closer look at who I am, what drives me, and how I approach building great mobile products."
+    <section id="about" className="border-t border-border py-20 sm:py-28">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <SectionHeader
+          index="05"
+          label="About"
+          title={
+            <>
+              A developer who thinks <Accent>like a product owner.</Accent>
+            </>
+          }
         />
 
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-16">
-          <Reveal className="mx-auto w-full max-w-xs lg:mx-0">
-            <div className="relative">
-              <div
-                className="animate-pulse-glow absolute -top-8 -left-8 -z-10 h-40 w-40 rounded-full bg-primary/30 blur-[70px]"
-                aria-hidden
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-14">
+          <Reveal className="lg:col-span-4">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-muted">
+              <Image
+                src={SITE.photo}
+                alt={`${SITE.name}, freelance developer`}
+                fill
+                sizes="(min-width: 1024px) 360px, 100vw"
+                className="object-cover object-[50%_20%]"
               />
-              <div
-                className="animate-pulse-glow absolute -right-6 -bottom-6 -z-10 h-40 w-40 rounded-full bg-accent/25 blur-[70px]"
-                style={{ animationDelay: "1.5s" }}
-                aria-hidden
-              />
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-secondary to-accent p-[1px] shadow-[0_0_40px_rgba(0,198,255,0.15)]">
-                <div className="overflow-hidden rounded-[1.4rem] bg-card">
-                  {/* eslint-disable-next-line @next/next/no-img-element -- local portrait; native img avoids fill-sizing bugs in this framed layout */}
-                  <img
-                    src={SITE.photo}
-                    alt={`${SITE.name} — ${SITE.role}`}
-                    width={480}
-                    height={600}
-                    className="aspect-[4/5] h-auto w-full object-cover object-[center_15%]"
-                  />
-                </div>
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="glass absolute -bottom-5 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-2xl border border-white/10 px-4 py-3 text-center shadow-xl"
-              >
-                <span className="font-display text-lg font-bold text-primary">4+</span>
-                <span className="text-xs text-subtext">Years crafting Flutter apps</span>
-              </motion.div>
             </div>
+            <p className="mt-4 text-sm text-subtext">{SITE.location}</p>
           </Reveal>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {ABOUT_BLOCKS.map((block, i) => (
-              <Reveal key={block.key} delay={i * 0.08}>
-                <div className="glass h-full rounded-2xl border border-white/10 p-6 transition-colors hover:border-primary/30">
-                  <h3 className="font-display text-base font-semibold text-foreground">
-                    {block.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-subtext">{ABOUT[block.key]}</p>
-                </div>
-              </Reveal>
-            ))}
+          <div className="lg:col-span-8">
+            <Reveal className="space-y-5 text-lg leading-relaxed text-pretty">
+              {ABOUT.paragraphs.map((p, i) => (
+                <p key={i} className={i === 0 ? "text-foreground" : "text-subtext"}>
+                  {p}
+                </p>
+              ))}
+            </Reveal>
+
+            <Reveal className="mt-12">
+              <h3 className="eyebrow">Tech stack</h3>
+              <dl className="mt-4 divide-y divide-border border-y border-border">
+                {STACK_GROUPS.map((group) => (
+                  <div key={group.title} className="grid gap-2 py-4 sm:grid-cols-[8rem_1fr]">
+                    <dt className="font-medium">{group.title}</dt>
+                    <dd className="text-subtext">{group.items.join(" · ")}</dd>
+                  </div>
+                ))}
+              </dl>
+            </Reveal>
+
+            <Reveal className="mt-12">
+              <h3 className="eyebrow">Experience</h3>
+              <ol className="mt-4 divide-y divide-border border-y border-border">
+                {EXPERIENCE.map((item) => (
+                  <li key={item.company} className="grid gap-1 py-4 sm:grid-cols-[10rem_1fr] sm:gap-6">
+                    <span className="font-mono text-sm text-faint sm:pt-0.5">{item.period}</span>
+                    <div>
+                      <p className="font-medium">
+                        {item.role} <span className="font-normal text-subtext">· {item.company}</span>
+                      </p>
+                      <p className="mt-1 text-[0.95rem] text-subtext">{item.note}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </Reveal>
+
+            <Reveal className="mt-12">
+              <h3 className="eyebrow">Open source &amp; writing</h3>
+              <ul className="mt-4 divide-y divide-border border-y border-border">
+                {WRITING.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group flex items-baseline justify-between gap-4 py-3.5"
+                    >
+                      <span className="underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-accent">
+                        {item.title}
+                      </span>
+                      <span className="flex shrink-0 items-center gap-1 text-sm text-faint">
+                        {item.meta}
+                        <ArrowUpRight className="size-3.5" aria-hidden />
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
           </div>
         </div>
       </div>

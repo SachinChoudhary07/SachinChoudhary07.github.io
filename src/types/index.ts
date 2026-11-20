@@ -3,99 +3,90 @@ export type NavItem = {
   href: string;
 };
 
-export type SocialLink = {
-  name: string;
+export type ContactChannel = {
+  id: "email" | "whatsapp" | "linkedin" | "upwork" | "github";
+  label: string;
+  value: string;
   href: string;
-  icon: string;
 };
 
 export type Stat = {
-  value: number;
-  suffix: string;
+  value: string;
   label: string;
-};
-
-export type SkillCategory = {
-  id: string;
-  title: string;
-  skills: Skill[];
-};
-
-export type Skill = {
-  name: string;
-  level: number;
-};
-
-export type Experience = {
-  id: string;
-  role: string;
-  company: string;
-  location: string;
-  period: string;
-  type: string;
-  responsibilities: string[];
-  technologies: string[];
-  achievements: string[];
-};
-
-export type ProjectCategory = "All" | "Flutter" | "Firebase" | "UI" | "API" | "Web";
-
-export type Project = {
-  id: string;
-  title: string;
-  description: string;
-  longDescription: string;
-  image: string;
-  screenshots: string[];
-  features: string[];
-  techStack: string[];
-  categories: ProjectCategory[];
-  github?: string;
-  liveDemo?: string;
-  playStore?: string;
-  challenges: string[];
-  solutions: string[];
-  lessons: string[];
-  architecture: string;
-  role: string;
-  performance: string[];
-  timeline: string;
 };
 
 export type Service = {
   id: string;
   title: string;
+  outcome: string;
+  points: string[];
+  stack: string;
+};
+
+export type CaseStudyLink = {
+  label: string;
+  href: string;
+};
+
+export type CaseStudyVisual =
+  /** One wide banner / mockup image, shown edge to edge. */
+  | { kind: "cover"; images: [string]; tone: string }
+  /** Two or three phone screenshots side by side. */
+  | { kind: "phones"; images: string[]; tone: string }
+  /** A logo or icon on a tinted panel. */
+  | { kind: "logo"; images: [string]; tone: string }
+  /** No screenshots yet: renders a designed placeholder graphic. */
+  | { kind: "chessboard"; images: []; tone: string };
+
+export type CaseStudy = {
+  id: string;
+  name: string;
+  summary: string;
+  context: string;
+  problem: string;
+  built: string;
+  features: string[];
+  stack: string[];
+  links: CaseStudyLink[];
+  visual: CaseStudyVisual;
+};
+
+export type MoreWorkItem = {
+  name: string;
   description: string;
-  icon: string;
+  tags: string[];
+  href?: string;
+  linkLabel?: string;
+};
+
+export type ProcessStep = {
+  title: string;
+  description: string;
 };
 
 export type Testimonial = {
   id: string;
   name: string;
-  company: string;
-  role: string;
+  project: string;
+  source?: string;
   review: string;
   rating: number;
-  avatar: string;
 };
 
-export type BlogPost = {
-  id: string;
-  slug: string;
+export type StackGroup = {
   title: string;
-  excerpt: string;
-  image: string;
-  tags: string[];
-  date: string;
-  readTime: string;
-  url: string;
+  items: string[];
 };
 
-export type CommandItem = {
-  id: string;
-  label: string;
-  href?: string;
-  action?: string;
-  shortcut?: string;
-  group: string;
+export type ExperienceItem = {
+  period: string;
+  role: string;
+  company: string;
+  note: string;
+};
+
+export type WritingItem = {
+  title: string;
+  href: string;
+  meta: string;
 };

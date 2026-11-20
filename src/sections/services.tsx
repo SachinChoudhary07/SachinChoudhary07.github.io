@@ -1,65 +1,56 @@
-"use client";
-
-import { motion } from "framer-motion";
-import {
-  Bug,
-  CreditCard,
-  Flame,
-  MessagesSquare,
-  Network,
-  Palette,
-  Rocket,
-  Smartphone,
-  Zap,
-  type LucideIcon,
-} from "lucide-react";
-import { Reveal, SectionHeading } from "@/components/shared/section-heading";
+import { Bot, LayoutDashboard, Smartphone, Wrench, type LucideIcon } from "lucide-react";
+import { Reveal } from "@/components/shared/reveal";
+import { Accent, SectionHeader } from "@/components/shared/section-header";
 import { SERVICES } from "@/constants/site";
 
-const SERVICE_ICONS: Record<string, LucideIcon> = {
-  smartphone: Smartphone,
-  flame: Flame,
-  bug: Bug,
-  zap: Zap,
-  rocket: Rocket,
-  palette: Palette,
-  network: Network,
-  messages: MessagesSquare,
-  "credit-card": CreditCard,
+const ICONS: Record<string, LucideIcon> = {
+  mobile: Smartphone,
+  web: LayoutDashboard,
+  ai: Bot,
+  maintain: Wrench,
 };
 
 export function Services() {
   return (
-    <section id="services" className="relative py-14 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Services"
-          title="How I Can Help"
-          description="From first commit to store release — Flutter and web expertise for your product."
+    <section id="services" className="border-t border-border py-20 sm:py-28">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <SectionHeader
+          index="01"
+          label="Services"
+          title={
+            <>
+              Everything your product needs, <Accent>built by one person.</Accent>
+            </>
+          }
+          intro="Most clients come to me with an idea and leave with a live app, the admin panel to run it, and someone to call when they need the next feature."
         />
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 sm:grid-cols-2">
           {SERVICES.map((service, i) => {
-            const Icon = SERVICE_ICONS[service.icon] ?? Smartphone;
+            const Icon = ICONS[service.id] ?? Smartphone;
             return (
-              <Reveal key={service.id} delay={(i % 4) * 0.08}>
-                <motion.div
-                  whileHover={{ y: -8 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 22 }}
-                  className="group glass relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 p-6 transition-colors hover:border-primary/40"
-                >
-                  <div
-                    className="absolute -top-10 -right-10 h-24 w-24 rounded-full bg-primary/10 blur-2xl transition-opacity group-hover:opacity-100"
-                    aria-hidden
-                  />
-                  <span className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary transition-transform group-hover:scale-110">
-                    <Icon className="h-5 w-5" />
+              <Reveal
+                key={service.id}
+                delay={i * 60}
+                className="group flex flex-col rounded-2xl border border-border bg-surface p-7 transition-colors hover:border-border-strong sm:p-8"
+              >
+                <div className="flex items-start justify-between">
+                  <span className="grid size-11 place-items-center rounded-xl bg-muted text-foreground transition-colors group-hover:bg-accent-soft group-hover:text-accent">
+                    <Icon className="size-5" aria-hidden />
                   </span>
-                  <h3 className="relative mt-4 font-display text-base font-semibold text-foreground">
-                    {service.title}
-                  </h3>
-                  <p className="relative mt-2 text-sm text-subtext">{service.description}</p>
-                </motion.div>
+                  <span className="eyebrow">0{i + 1}</span>
+                </div>
+                <h3 className="mt-6 text-xl font-semibold tracking-tight">{service.title}</h3>
+                <p className="mt-2 text-subtext">{service.outcome}</p>
+                <ul className="mt-6 space-y-2.5 text-[0.95rem]">
+                  {service.points.map((point) => (
+                    <li key={point} className="flex gap-3">
+                      <span aria-hidden className="mt-2.5 h-px w-3 shrink-0 bg-faint" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-auto pt-7 font-mono text-xs text-faint">{service.stack}</p>
               </Reveal>
             );
           })}
