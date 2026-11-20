@@ -14,13 +14,13 @@ export type PriceBand = {
 };
 
 export const PRICE_TABLE: Record<ProjectSize, PriceBand> = {
-  small: { label: "Small", min: 700, max: 1500, weeks: [2, 3] },
-  medium: { label: "Medium", min: 1500, max: 3000, weeks: [4, 6] },
-  large: { label: "Large", min: 3000, max: 7000, weeks: [6, 10] },
-  xl: { label: "Extra large", min: 7000, max: 15000, weeks: [10, 16] },
+  small: { label: "Small", min: 400, max: 900, weeks: [2, 3] },
+  medium: { label: "Medium", min: 900, max: 2000, weeks: [4, 6] },
+  large: { label: "Large", min: 2000, max: 4500, weeks: [6, 10] },
+  xl: { label: "Extra large", min: 4500, max: 10000, weeks: [10, 16] },
 };
 
 /** Added on top when the project includes a real AI feature. */
-export const AI_ADDON = { min: 500, max: 1500, weeks: 1 };
+export const AI_ADDON = { min: 300, max: 1000, weeks: 1 };
 
 export const CURRENCY = "USD";
