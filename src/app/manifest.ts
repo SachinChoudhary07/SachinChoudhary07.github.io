@@ -4,13 +4,13 @@ export const dynamic = "force-static";
 
 export default function manifest() {
   return {
-    name: `${SITE.name} — Portfolio`,
+    name: SITE.title,
     short_name: SITE.name.split(" ")[0],
     description: SITE.description,
     start_url: "/",
     display: "standalone",
-    background_color: "#050816",
-    theme_color: "#00C6FF",
+    background_color: "#fafaf7",
+    theme_color: "#c2410c",
     icons: [
       {
         src: "/favicon.ico",

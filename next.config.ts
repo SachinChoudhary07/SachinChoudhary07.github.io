@@ -4,19 +4,8 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   images: {
+    // Static export: images are served as-is from /public.
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "ui-avatars.com",
-        pathname: "/**",
-      },
-    ],
   },
 };
 
